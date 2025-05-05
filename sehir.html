@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Karabük</title>
+<title>Şehrim: Karabük</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,8 +12,24 @@
         <h1>Karabük</h1>
     </header>
 
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="sehir.html"> Şehrim </a>
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="hakkında.html">Anasayfa </a></li>
+              <li class="nav-item"><a class="nav-link" href="özgecmis.html">Öz Geçmiş</a></li>
+              <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+              <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+              <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+              <li class="nav-item"><a class="nav-link" href="login.html">Giriş</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>  
 
-    <div class="container mt-4">
+
+    <div class="container mt-4 text-white">
         <p>
           Karabük, Türkiye'nin Karadeniz bölgesinde yer alan, tarihi ve doğal güzellikleriyle bilinen bir ildir. 
           Nüfusu yaklaşık 250.000'dir. Özellikle Safranbolu ilçesiyle UNESCO Dünya Mirası Listesi'nde yer alır.
@@ -25,12 +41,62 @@
             <li>Yenice Ormanları</li>
             <li>Kristal Cam Teras</li>
             <li>Hadrianapolis Antik Kenti</li>
-            <li>Bulak Mağarası</li>
         </ul>
+    </div>
 
-        <footer class="text-center bg-light p-3 mt-4">
+
+    <div id="karabukSlider" class="carousel slide mt-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="safranbolu.html">
+            <img src="img/safranbolu.jpg" class="d-block w-100" alt="Safranbolu">
+          </a>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Safranbolu</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <a href="kristalteras.html">
+            <img src="img/kristal-teras.jpg" class="d-block w-100" alt="Kristal Teras">
+          </a>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Kristal Teras</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <a href="yenice.html">
+            <img src="img/yenice.jpg" class="d-block w-100" alt="Yenice Ormanları">
+          </a>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Yenice Ormanları</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <a href="hadrianapolis.html">
+            <img src="img/hadrianapolis.jpg" class="d-block w-100" alt="Hadrianapolis">
+          </a>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Hadrianapolis Antik Kenti</h5>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#karabukSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#karabukSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <footer class="text-center p-3 mt-4">
             © 2025 - Şehrim
-          </footer>
+     </footer>
+    
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 
