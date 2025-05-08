@@ -15,19 +15,22 @@ body {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin-top: 20px;
   margin-bottom: 20px;
+  color:white;
 }
 
 h1, h2, h3 {
-  color: #f2eded;
+  color: #ffffff;
 }
 
 img {
-  max-width: 100%;
+  width: 400px;
+  height: 250px;
   border-radius: 5px;
 }
 
 header{
   background-color: rgb(22, 54, 102);
+  color:white;
 }
 
 nav{
@@ -41,13 +44,13 @@ footer{
 
 #karabukSlider {
   width: 50%;         
-  height: 450px;       /* yüksekliği istediğin gibi ayarla */
-  overflow: hidden;    /* taşmaları engelle */
-  margin: auto;        /* ortalamak için (gerekiyorsa) */
+  height: 450px; 
+  overflow: hidden; 
+  margin: auto;        
 }
 
 #karabukSlider img {
   width: 100%;
   height: 450px;
-  object-fit: cover;   /* görüntüyü kırp ama taşırma */
+  object-fit: cover; 
 }
