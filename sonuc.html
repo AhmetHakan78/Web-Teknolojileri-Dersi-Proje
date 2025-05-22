@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form Sonuçları</title>
+</head>
+<body>
+  <h1>Gönderilen Bilgiler</h1>
+  <div id="sonuc"></div>
+
+  <script>
+    const veri = JSON.parse(localStorage.getItem('formBilgileri'));
+    if (veri) {
+      document.getElementById('sonuc').innerHTML = `
+        <p><strong>Ad Soyad:</strong> ${veri.adsoyad}</p>
+        <p><strong>E-posta:</strong> ${veri.email}</p>
+        <p><strong>Telefon:</strong> ${veri.telefon}</p>
+        <p><strong>Cinsiyet:</strong> ${veri.cinsiyet}</p>
+        <p><strong>Konu:</strong> ${veri.konu}</p>
+        <p><strong>Mesaj:</strong> ${veri.mesaj}</p>
+        <p><strong>Bülten Aboneliği:</strong> ${veri.bulten ? 'Evet' : 'Hayır'}</p>
+      `;
+    } else {
+      document.getElementById('sonuc').innerText = 'Gösterilecek veri bulunamadı.';
+    }
+  </script>
+</body>
+</html>

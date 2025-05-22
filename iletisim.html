@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <title>İletişim</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header class="text-center p-3">
+            <h1>İletişim</h1>
+          </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+              <a class="navbar-brand" href="iletisim.html"> İletişim </a>
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" href="hakkında.html">Anasayfa </a></li>
+                  <li class="nav-item"><a class="nav-link" href="sehir.html">Şehrim</a></li>
+                  <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
+                  <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+                  <li class="nav-item"><a class="nav-link" href="özgecmis.html">Öz Geçmiş</a></li>
+                  <li class="nav-item"><a class="nav-link" href="login.html">Giriş</a></li>
+                </ul>
+              </div>
+            </div>
+        </nav>   
+        
+    <div class="container mt-4">
+  <form id="contactForm" @submit.prevent="submitForm">
+    <table>
+      <tr>
+        <td><label for="adsoyad">Ad Soyad:</label></td>
+        <td><input type="text" v-model="form.adsoyad" name="adsoyad" /></td>
+      </tr>
+      <tr>
+        <td><label for="email">E-posta:</label></td>
+        <td><input type="text" v-model="form.email" name="email" /></td>
+      </tr>
+      <tr>
+        <td><label for="telefon">Telefon:</label></td>
+        <td><input type="text" v-model="form.telefon" name="telefon" /></td>
+      </tr>
+      <tr>
+        <td><label>Cinsiyet:</label></td>
+        <td>
+          <label><input type="radio" value="Kadın" v-model="form.cinsiyet" name="cinsiyet" /> Kadın</label>
+          <label><input type="radio" value="Erkek" v-model="form.cinsiyet" name="cinsiyet" /> Erkek</label>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="konu">Konu:</label></td>
+        <td>
+          <select v-model="form.konu" name="konu">
+            <option disabled value="">Lütfen bir konu seçin</option>
+            <option>Genel Bilgi</option>
+            <option>Teknik Destek</option>
+            <option>Öneri</option>
+            <option>Şikayet</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="mesaj">Mesaj:</label></td>
+        <td><textarea v-model="form.mesaj" name="mesaj"></textarea></td>
+      </tr>
+      <tr>
+        <td><label for="bulten">Bülten:</label></td>
+        <td>
+          <label><input type="checkbox" v-model="form.bulten" /> Bültene abone olmak istiyorum</label>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button type="button" @click="vueValidate">Vue.js ile Kontrol Et</button>
+          <button type="button" onclick="jsValidate()">JavaScript ile Kontrol Et</button>
+          <button type="reset">Temizle</button>
+          <button type="submit">Gönder</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+          <footer class="text-center p-3 mt-4">
+            © 2025 - İletişim
+          </footer>              
+    </body>
+</html>
