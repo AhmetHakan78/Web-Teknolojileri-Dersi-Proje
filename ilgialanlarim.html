@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <title>İlgi Alanlarım</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <header class="text-center p-3">
+            <h1>İlgi Alanlarım</h1>
+          </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+              <a class="navbar-brand" href="ilgialanlarim.html"> İlgi Alanlarım </a>
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" href="hakkında.html">Anasayfa </a></li>
+                  <li class="nav-item"><a class="nav-link" href="özgecmis.html">Öz Geçmiş</a></li>
+                  <li class="nav-item"><a class="nav-link" href="sehir.html">Şehrim</a></li>
+                  <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
+                  <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                  <li class="nav-item"><a class="nav-link" href="login.html">Giriş</a></li>
+                </ul>
+              </div>
+            </div>
+        </nav>   
+        
+        <div class="container mt-4">
+            <h2>Popüler Filmler</h2>
+            <ul id="movies" class="list-group"></ul>
+            <script>
+    const apiKey = '71cbe7b5ef5286cf9fd9a1e46d3050fe';
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=tr-TR&page=1`;
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("API isteği başarısız oldu");
+        }
+        return response.json();
+      })
+      .then(data => {
+        const movieList = document.getElementById('movies');
+        data.results.forEach(movie => {
+          const li = document.createElement('li');
+          li.textContent = `${movie.title} (${movie.release_date}) - Puan: ${movie.vote_average}`;
+          movieList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error("Hata:", error);
+      });
+            </script>
+          </div>  
+
+          <footer class="text-center p-3 mt-4">
+            © 2025 - İlgi Alanlarım
+          </footer>              
+    </body>
+</html>

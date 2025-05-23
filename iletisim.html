@@ -1,91 +1,180 @@
 <!DOCTYPE html>
 <html lang="tr">
-    <head>
-        <meta charset="UTF-8">
-        <title>İletişim</title>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    </head>
-    <body>
-        <header class="text-center p-3">
-            <h1>İletişim</h1>
-          </header>
+<head>
+  <meta charset="UTF-8">
+  <title>İletişim</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
 
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-              <a class="navbar-brand" href="iletisim.html"> İletişim </a>
-              <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto">
-                  <li class="nav-item"><a class="nav-link" href="hakkında.html">Anasayfa </a></li>
-                  <li class="nav-item"><a class="nav-link" href="sehir.html">Şehrim</a></li>
-                  <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
-                  <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
-                  <li class="nav-item"><a class="nav-link" href="özgecmis.html">Öz Geçmiş</a></li>
-                  <li class="nav-item"><a class="nav-link" href="login.html">Giriş</a></li>
-                </ul>
-              </div>
-            </div>
-        </nav>   
-        
-    <div class="container mt-4">
-  <form id="contactForm" @submit.prevent="submitForm">
-    <table>
-      <tr>
-        <td><label for="adsoyad">Ad Soyad:</label></td>
-        <td><input type="text" v-model="form.adsoyad" name="adsoyad" /></td>
-      </tr>
-      <tr>
-        <td><label for="email">E-posta:</label></td>
-        <td><input type="text" v-model="form.email" name="email" /></td>
-      </tr>
-      <tr>
-        <td><label for="telefon">Telefon:</label></td>
-        <td><input type="text" v-model="form.telefon" name="telefon" /></td>
-      </tr>
-      <tr>
-        <td><label>Cinsiyet:</label></td>
-        <td>
-          <label><input type="radio" value="Kadın" v-model="form.cinsiyet" name="cinsiyet" /> Kadın</label>
-          <label><input type="radio" value="Erkek" v-model="form.cinsiyet" name="cinsiyet" /> Erkek</label>
-        </td>
-      </tr>
-      <tr>
-        <td><label for="konu">Konu:</label></td>
-        <td>
-          <select v-model="form.konu" name="konu">
-            <option disabled value="">Lütfen bir konu seçin</option>
-            <option>Genel Bilgi</option>
-            <option>Teknik Destek</option>
-            <option>Öneri</option>
-            <option>Şikayet</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td><label for="mesaj">Mesaj:</label></td>
-        <td><textarea v-model="form.mesaj" name="mesaj"></textarea></td>
-      </tr>
-      <tr>
-        <td><label for="bulten">Bülten:</label></td>
-        <td>
-          <label><input type="checkbox" v-model="form.bulten" /> Bültene abone olmak istiyorum</label>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <button type="button" @click="vueValidate">Vue.js ile Kontrol Et</button>
-          <button type="button" onclick="jsValidate()">JavaScript ile Kontrol Et</button>
-          <button type="reset">Temizle</button>
-          <button type="submit">Gönder</button>
-        </td>
-      </tr>
-    </table>
-  </form>
-</div>
+<body>
+  <header class="text-center p-3">
+    <h1>İletişim</h1>
+  </header>
 
-          <footer class="text-center p-3 mt-4">
-            © 2025 - İletişim
-          </footer>              
-    </body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="iletisim.html">İletişim</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="hakkında.html">Anasayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="özgecmis.html">Öz Geçmiş</a></li>
+          <li class="nav-item"><a class="nav-link" href="sehir.html">Şehrim</a></li>
+          <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
+          <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Giriş</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>   
+
+  <div class="container mt-4" id="app">
+    <form id="contactForm" @submit.prevent="submitForm">
+      <table>
+        <tr>
+          <td><label for="adsoyad">Ad Soyad:</label></td>
+          <td><input type="text" v-model="form.adsoyad" name="adsoyad" /></td>
+        </tr>
+        <tr>
+          <td><label for="email">E-posta:</label></td>
+          <td><input type="text" v-model="form.email" name="email" /></td>
+        </tr>
+        <tr>
+          <td><label for="telefon">Telefon:</label></td>
+          <td><input type="text" v-model="form.telefon" name="telefon" /></td>
+        </tr>
+        <tr>
+          <td><label>Cinsiyet:</label></td>
+          <td>
+            <label><input type="radio" value="Kadın" v-model="form.cinsiyet" name="cinsiyet" /> Kadın</label>
+            <label><input type="radio" value="Erkek" v-model="form.cinsiyet" name="cinsiyet" /> Erkek</label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="konu">Konu:</label></td>
+          <td>
+            <select v-model="form.konu" name="konu">
+              <option disabled value="">Lütfen bir konu seçin</option>
+              <option>Genel Bilgi</option>
+              <option>Teknik Destek</option>
+              <option>Öneri</option>
+              <option>Şikayet</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="mesaj">Mesaj:</label></td>
+          <td><textarea v-model="form.mesaj" name="mesaj"></textarea></td>
+        </tr>
+        <tr>
+          <td><label for="bulten">Bülten:</label></td>
+          <td>
+            <label><input type="checkbox" v-model="form.bulten" /> Bültene abone olmak istiyorum</label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button type="button" @click="vueValidate">Vue.js ile Kontrol Et</button>
+            <button type="button" onclick="jsValidate()">JavaScript ile Kontrol Et</button>
+            <button type="reset">Temizle</button>
+            <button type="submit">Gönder</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <footer class="text-center p-3 mt-4">
+    © 2025 - İletişim
+  </footer>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        form: {
+          adsoyad: '',
+          email: '',
+          telefon: '',
+          cinsiyet: '',
+          konu: '',
+          mesaj: '',
+          bulten: false
+        }
+      },
+      methods: {
+        vueValidate() {
+          const adRegex = /^[a-zA-ZçÇğĞıİöÖşŞüÜ\s]{2,}$/;
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const telefonRegex = /^[0-9]{10,15}$/;
+
+          if (!this.form.adsoyad || !this.form.email || !this.form.telefon || !this.form.cinsiyet || !this.form.konu || !this.form.mesaj) {
+            alert("Lütfen tüm alanları doldurun!");
+            return;
+          }
+
+          if (!adRegex.test(this.form.adsoyad)) {
+            alert("Ad soyad geçersiz. Sadece harf giriniz.");
+            return;
+          }
+
+          if (!emailRegex.test(this.form.email)) {
+            alert("Geçerli bir e-posta giriniz.");
+            return;
+          }
+
+          if (!telefonRegex.test(this.form.telefon)) {
+            alert("Telefon numarası yalnızca rakam ve 10-15 hane olmalıdır.");
+            return;
+          }
+
+          alert("Vue.js ile doğrulama başarılı!");
+        },
+
+        submitForm() {
+          localStorage.setItem("formBilgileri", JSON.stringify(this.form));
+          window.location.href = "sonuc.html";
+        }
+      }
+    });
+  </script>
+
+  <script>
+    function jsValidate() {
+      const ad = document.getElementsByName("adsoyad")[0].value.trim();
+      const email = document.getElementsByName("email")[0].value.trim();
+      const telefon = document.getElementsByName("telefon")[0].value.trim();
+      const cinsiyet = document.querySelector('input[name="cinsiyet"]:checked');
+      const konu = document.getElementsByName("konu")[0].value;
+      const mesaj = document.getElementsByName("mesaj")[0].value.trim();
+
+      const adRegex = /^[a-zA-ZçÇğĞıİöÖşŞüÜ\s]{2,}$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const telefonRegex = /^[0-9]{10,15}$/;
+
+      if (!ad || !email || !telefon || !cinsiyet || !konu || !mesaj) {
+        alert("Lütfen tüm alanları doldurun!");
+        return;
+      }
+
+      if (!adRegex.test(ad)) {
+        alert("Geçerli bir ad soyad girin.");
+        return;
+      }
+
+      if (!emailRegex.test(email)) {
+        alert("Geçerli bir e-posta girin.");
+        return;
+      }
+
+      if (!telefonRegex.test(telefon)) {
+        alert("Telefon numarası yalnızca rakam içermeli ve 10-15 hane olmalıdır.");
+        return;
+      }
+
+      alert("JavaScript ile doğrulama başarılı!");
+    }
+  </script>
+</body>
 </html>
